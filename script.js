@@ -12,6 +12,7 @@ const USD = 26.29;
 const EUR = 30.43;
 const RUB = 0.36;
 const PLN = 6.58;
+
 let confirmMessag;
 
 do {
@@ -29,8 +30,23 @@ do {
         PLN - польский злотый 
         `, 'UAH');
 
-        sum = prompt('Введите сумму:', '100');
+
+
         
+    } while (
+        currency !== 'UAH' &&
+        currency !== 'USD' &&
+        currency !== 'EUR' &&
+        currency !== 'RUB' &&
+        currency !== 'PLN'
+    );
+
+    do {
+        sum = prompt('Введите сумму:', '100');
+    console.log(isNaN(sum))        
+    } while (isNaN(sum) === true || sum < 0);
+
+    do {
         exchangeCurrency = prompt(
             `Введите валюту, в которую хотите конвертировать:
         USD - американский доллар
@@ -39,27 +55,13 @@ do {
         RUB - российский рубль
         PLN - польский злотый 
         `, 'EUR');
-    } while (
-        currency !== 'UAH' &&
-        currency !== 'USD' &&
-        currency !== 'EUR' &&
-        currency !== 'RUB' &&
-        currency !== 'PLN' &&
-        sum < 0 && sum === NaN &&
-        exchangeCurrency !== 'UAH' &&
-        exchangeCurrency !== 'USD' &&
-        exchangeCurrency !== 'EUR' &&
-        exchangeCurrency !== 'RUB' &&
-        exchangeCurrency !== 'PLN'
-
-    );
-
-    console.log(currency);
-    console.log(sum);
- if (sum < 0 && sum === NaN) {
-     alert('Error') 
-
- } 
+    } while (exchangeCurrency !== 'UAH' &&
+    exchangeCurrency !== 'USD' &&
+    exchangeCurrency !== 'EUR' &&
+    exchangeCurrency !== 'RUB' &&
+    exchangeCurrency !== 'PLN');
+    // console.log(currency);
+    // console.log(sum);
 
     if (currency === 'UAH' && exchangeCurrency === 'UAH') {
         alert(sum);
