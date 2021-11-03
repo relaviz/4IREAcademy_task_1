@@ -13,15 +13,24 @@ const EUR = 30.43;
 const RUB = 0.36;
 const PLN = 6.58;
 
+let currency;
 
-let currency = prompt(
-`Введите валюту: 
-USD - американский доллар
-UAH - украинская гривна
-EUR - Евро
-RUB - российский рубль
-PLN - польский злотый 
-`, 'UAH');
+do {
+    currency = prompt(
+    `Введите валюту: 
+    USD - американский доллар
+    UAH - украинская гривна
+    EUR - Евро
+    RUB - российский рубль
+    PLN - польский злотый 
+    `, 'UAH');
+} while (
+    currency !== 'UAH' &&
+    currency !== 'USD' &&
+    currency !== 'EUR' &&
+    currency !== 'RUB' &&
+    currency !== 'PLN'
+)
 
 
 let sum = +prompt('Введите сумму:', '100');
