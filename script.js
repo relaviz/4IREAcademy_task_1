@@ -12,56 +12,76 @@ const USD = 26.29;
 const EUR = 30.43;
 const RUB = 0.36;
 const PLN = 6.58;
-
-let currency;
+let confirmMessag;
 
 do {
-    currency = prompt(
-    `Введите валюту: 
-    USD - американский доллар
-    UAH - украинская гривна
-    EUR - Евро
-    RUB - российский рубль
-    PLN - польский злотый 
-    `, 'UAH');
-} while (
-    currency !== 'UAH' &&
-    currency !== 'USD' &&
-    currency !== 'EUR' &&
-    currency !== 'RUB' &&
-    currency !== 'PLN'
-)
+    let currency;
+    let sum;
+    let exchangeCurrency;
 
+    do {
+        currency = prompt(
+            `Введите валюту: 
+        USD - американский доллар
+        UAH - украинская гривна
+        EUR - Евро
+        RUB - российский рубль
+        PLN - польский злотый 
+        `, 'UAH');
 
-let sum = +prompt('Введите сумму:', '100');
-let exchangeCurrency = prompt(
-`Введите валюту, в которую хотите конвертировать:
-USD - американский доллар
-UAH - украинская гривна
-EUR - Евро
-RUB - российский рубль
-PLN - польский злотый 
-`, 'EUR');
+        sum = prompt('Введите сумму:', '100');
+        
+        exchangeCurrency = prompt(
+            `Введите валюту, в которую хотите конвертировать:
+        USD - американский доллар
+        UAH - украинская гривна
+        EUR - Евро
+        RUB - российский рубль
+        PLN - польский злотый 
+        `, 'EUR');
+    } while (
+        currency !== 'UAH' &&
+        currency !== 'USD' &&
+        currency !== 'EUR' &&
+        currency !== 'RUB' &&
+        currency !== 'PLN' &&
+        sum < 0 && sum === NaN &&
+        exchangeCurrency !== 'UAH' &&
+        exchangeCurrency !== 'USD' &&
+        exchangeCurrency !== 'EUR' &&
+        exchangeCurrency !== 'RUB' &&
+        exchangeCurrency !== 'PLN'
 
+    );
 
-if (currency === 'UAH' && exchangeCurrency === 'UAH') {
-    alert(sum);
-} else if (currency === 'UAH' && exchangeCurrency === 'USD') {
-    alert(sum * UAH / USD)
-} else if (currency === 'USD' && exchangeCurrency === 'UAH') {
-    alert(sum * USD)
-} else if (currency === 'UAH' && exchangeCurrency === 'EUR') {
-    alert(sum * UAH / EUR)
-} else if (currency === 'EUR' && exchangeCurrency === 'UAH') {
-    alert(sum * EUR)
-} else if (currency === 'UAH' && exchangeCurrency === 'RUB') {
-    alert(sum * UAH / RUB)
-} else if (currency === 'RUB' && exchangeCurrency === 'UAH') {
-    alert (sum * RUB)
-} else if (currency === 'UAH' && exchangeCurrency === 'PLN') {
-    alert(sum * UAH / PLN)
-} else if (currency === 'PLN' && exchangeCurrency === 'UAH') {
-    alert(sum * PLN)
-} else {
-    alert('');
-}
+    console.log(currency);
+    console.log(sum);
+ if (sum < 0 && sum === NaN) {
+     alert('Error') 
+
+ } 
+
+    if (currency === 'UAH' && exchangeCurrency === 'UAH') {
+        alert(sum);
+    } else if (currency === 'UAH' && exchangeCurrency === 'USD') {
+        alert(sum * UAH / USD)
+    } else if (currency === 'USD' && exchangeCurrency === 'UAH') {
+        alert(sum * USD)
+    } else if (currency === 'UAH' && exchangeCurrency === 'EUR') {
+        alert(sum * UAH / EUR)
+    } else if (currency === 'EUR' && exchangeCurrency === 'UAH') {
+        alert(sum * EUR)
+    } else if (currency === 'UAH' && exchangeCurrency === 'RUB') {
+        alert(sum * UAH / RUB)
+    } else if (currency === 'RUB' && exchangeCurrency === 'UAH') {
+        alert(sum * RUB)
+    } else if (currency === 'UAH' && exchangeCurrency === 'PLN') {
+        alert(sum * UAH / PLN)
+    } else if (currency === 'PLN' && exchangeCurrency === 'UAH') {
+        alert(sum * PLN)
+    } else {
+        alert('Неверно введены данные! Повторите попытку!');
+    }
+
+    confirmMessage = confirm("Провести операцию еще раз?")
+} while (confirmMessage === true);
