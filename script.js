@@ -69,20 +69,26 @@ do {
         alert(sum * UAH / USD)
     } else if (currency === 'USD' && exchangeCurrency === 'UAH') {
         alert(sum * USD)
+    } else if (currency === 'USD' && exchangeCurrency === 'USD') {
+        alert(sum);
     } else if (currency === 'UAH' && exchangeCurrency === 'EUR') {
         alert(sum * UAH / EUR)
     } else if (currency === 'EUR' && exchangeCurrency === 'UAH') {
         alert(sum * EUR)
+    } else if (currency === 'EUR' && exchangeCurrency === 'EUR') {
+        alert(sum)
     } else if (currency === 'UAH' && exchangeCurrency === 'RUB') {
         alert(sum * UAH / RUB)
     } else if (currency === 'RUB' && exchangeCurrency === 'UAH') {
         alert(sum * RUB)
+    } else if (currency === 'RUB' && exchangeCurrency === 'RUB') {
+        alert (sum)
     } else if (currency === 'UAH' && exchangeCurrency === 'PLN') {
         alert(sum * UAH / PLN)
     } else if (currency === 'PLN' && exchangeCurrency === 'UAH') {
         alert(sum * PLN)
     } else {
-        alert('Неверно введены данные! Повторите попытку!');
+        alert(sum);
     }
 
     confirmMessage = confirm("Провести операцию еще раз?")
