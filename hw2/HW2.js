@@ -1,4 +1,4 @@
-let integer = prompt('Enter integer number:', '3');
+let integer = parseInt(prompt('Enter integer number:', '3'));
 
 const fibonacci = (f0, f1, n) => {
     if (n === 0 || n === 1) return f0;
