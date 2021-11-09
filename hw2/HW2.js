@@ -7,5 +7,5 @@ const fibonacci = (f0, f1, n) => {
         return fibonacci(f0, f1, n - 1) + fibonacci(f0, f1, n - 2);
     }
 }
-
-document.write( fibonacci(-10, 5, integer))
+// console.log( fibonacci(0, 1, 7))
+document.write( fibonacci(0, 1, 7))

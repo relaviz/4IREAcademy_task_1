@@ -30,9 +30,6 @@ do {
         PLN - польский злотый 
         `, 'UAH');
 
-
-
-        
     } while (
         currency !== 'UAH' &&
         currency !== 'USD' &&
@@ -43,7 +40,7 @@ do {
 
     do {
         sum = prompt('Введите сумму:', '100');
-    console.log(isNaN(sum))        
+        console.log(isNaN(sum))
     } while (isNaN(sum) === true || sum < 0);
 
     do {
@@ -59,7 +56,7 @@ do {
     exchangeCurrency !== 'USD' &&
     exchangeCurrency !== 'EUR' &&
     exchangeCurrency !== 'RUB' &&
-    exchangeCurrency !== 'PLN');
+        exchangeCurrency !== 'PLN');
     // console.log(currency);
     // console.log(sum);
 
@@ -82,7 +79,7 @@ do {
     } else if (currency === 'RUB' && exchangeCurrency === 'UAH') {
         alert(sum * RUB)
     } else if (currency === 'RUB' && exchangeCurrency === 'RUB') {
-        alert (sum)
+        alert(sum)
     } else if (currency === 'UAH' && exchangeCurrency === 'PLN') {
         alert(sum * UAH / PLN)
     } else if (currency === 'PLN' && exchangeCurrency === 'UAH') {
@@ -91,5 +88,5 @@ do {
         alert(sum);
     }
 
-    confirmMessage = confirm("Провести операцию еще раз?")
-} while (confirmMessage === true);
+    confirmMessag = confirm("Провести операцию еще раз?")
+} while (confirmMessag === true);
