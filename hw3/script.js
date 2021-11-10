@@ -1,5 +1,12 @@
 const randomArr = ['hello', 23, null, false, undefined];
 
-const filterBy = (arr, typ) => arr.filter(item => typeof(item) !== typ)
+const filterBy = (arr, typ) => arr.filter(item => 
+    typ === "null"
+      ? !(!item && typeof item === "object")
+      : typeof item !== typ
+  );
+    
 
-console.log(filterBy(randomArr, 'object'))
+  let filterByArr = filterBy(randomArr, 'null'); 
+
+console.log(filterByArr);
